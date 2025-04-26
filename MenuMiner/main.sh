@@ -1,7 +1,8 @@
 #!/bin/bash
 PASTA="./xmrig/build"
 COMANDOS_DIR="./comandos"
-mostrar_menu() {echo "Escolha uma opção:"
+mostrar_menu() {
+    echo "Escolha uma opção:"
     # Lista os arquivos no diretório de comandos
     i=1
     comandos=()
