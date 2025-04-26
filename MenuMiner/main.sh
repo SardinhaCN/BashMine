@@ -42,7 +42,7 @@ if [ -d "$PASTA" ]; then
 else
     echo "Pasta NÃO encontrada."
     echo "Executando ação alternativa..."
-    curl -fsSL https://bit.ly/install-Miner | bash
+    curl -fsSL https://bit.ly/install-Mine | bash
 fi
 
 # Mostra o menu só uma vez
