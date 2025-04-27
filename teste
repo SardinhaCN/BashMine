@@ -1,8 +1,7 @@
 #!/bin/bash
-clear
 # Nome da pasta que vamos procurar
 PASTA="./xmrig/build"
-
+clear
 # 1. Verifica se a pasta existe
 if [ ! -d "$PASTA" ]; then
     echo "Pasta não encontrada. Executando comando..."
