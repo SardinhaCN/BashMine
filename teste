@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
-NOME_PASTA="build"
-DIRETORIO_INICIAL="/xmrig/"
+NOME_PASTA="xmrig"
+DIRETORIO_INICIAL="/"
 
 PASTA_ENCONTRADA=$(find "$DIRETORIO_INICIAL" -type d -name "$NOME_PASTA" 2>/dev/null | head -n 1)
 
