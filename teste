@@ -1,17 +1,19 @@
 #!/bin/bash
-
-PASTA="/xmrig/"
 clear
+NOME_PASTA="build"
+DIRETORIO_INICIAL="/xmrig/"
 
-# if-else direto para encontrar a pasta
-if [ -d "$PASTA" ]; then
-    echo "Pasta encontrada: $PASTA"
+PASTA_ENCONTRADA=$(find "$DIRETORIO_INICIAL" -type d -name "$NOME_PASTA" 2>/dev/null | head -n 1)
+
+if [ -n "$PASTA_ENCONTRADA" ]; then
+    echo "Pasta encontrada: $PASTA_ENCONTRADA"
 else
     echo "Pasta não encontrada. Criando..."
-    echo "pasta criada"
+    mkdir -p "$DIRETORIO_INICIAL/$NOME_PASTA"
+    PASTA_ENCONTRADA="$DIRETORIO_INICIAL/$NOME_PASTA"
 fi
 
-# Depois segue o select
+# Select depois
 PS3="Escolha uma opção: "
 options=("Listar arquivos" "Mostrar caminho" "Sair")
 
@@ -19,10 +21,10 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Listar arquivos")
-            ls "$PASTA"
+            ls "$PASTA_ENCONTRADA"
             ;;
         "Mostrar caminho")
-            echo "O caminho da pasta é: $PASTA"
+            echo "O caminho da pasta é: $PASTA_ENCONTRADA"
             ;;
         "Sair")
             echo "Saindo..."
