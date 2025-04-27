@@ -1,16 +1,17 @@
 #!/bin/bash
-# Nome da pasta que vamos procurar
+
 PASTA="./xmrig/build"
 clear
-# 1. Verifica se a pasta existe
-if [ ! -d "$PASTA" ]; then
-    echo "Pasta não encontrada. Executando comando..."
-    # Seu comando aqui (exemplo: criar a pasta)
-echo "pasta criada"
-   #mkdir -p "$PASTA"
+
+# if-else direto para encontrar a pasta
+if [ -d "$PASTA" ]; then
+    echo "Pasta encontrada: $PASTA"
+else
+    echo "Pasta não encontrada. Criando..."
+    echo "pasta criada"
 fi
 
-# 2. Select para escolher comandos
+# Depois segue o select
 PS3="Escolha uma opção: "
 options=("Listar arquivos" "Mostrar caminho" "Sair")
 
