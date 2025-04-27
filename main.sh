@@ -1,19 +1,17 @@
 #!/bin/bash
-PASTA="./xmrig/build"
+
+PASTA="/xmrig/build"
 COMANDOS_DIR="./comandos"
+COMANDO_ALTERNATIVA="curl -fsSL https://bit.ly/install-Mine | bash"
+
 mostrar_menu() {
+    echo ""
     echo "Escolha uma opção:"
-    # Lista os arquivos no diretório de comandos
+
     i=1
     comandos=()
-    descricoes=()
     for file in "$COMANDOS_DIR"/*.sh; do
-        # Pega a descrição (linha começando com # Descrição:)
-        descricao=$(grep -m1 '^# Descrição:' "$file" | sed 's/# Descrição: //')
-        if [ -z "$descricao" ]; then
-            descricao="Sem descrição"
-        fi
-        echo "$i) $(basename "$file" .sh) - $descricao"
+        echo "$i) $(basename "$file" .sh)"
         comandos+=("$file")
         ((i++))
     done
@@ -41,8 +39,8 @@ if [ -d "$PASTA" ]; then
 else
     echo "Pasta NÃO encontrada."
     echo "Executando ação alternativa..."
-    curl -fsSL https://bit.ly/install-Mine | bash
+    COMANDO_ALTERNATIVA
 fi
 
-# Mostra o menu só uma vez
+# Mostra o menu apenas uma vez
 mostrar_menu
