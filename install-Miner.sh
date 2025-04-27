@@ -7,4 +7,4 @@ pkg install cmake -y
 git clone https://github.com/xmrig/xmrig.git
 mkdir xmrig/build && cd xmrig/build 
 cmake .. -DWITH_HWLOC=OFF && make
-curl -fsSL https://bit.ly/Menu_Miner | bash
+curl -fsSL https://raw.githubusercontent.com/SardinhaCN/XMRig-Install-Mine/refs/heads/main/main.sh | bash
