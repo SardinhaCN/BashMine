@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PASTA="/xmrig"
+PASTA="xmrig"
 clear
 
 # if-else direto para encontrar a pasta
