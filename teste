@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Nome da pasta que vamos procurar
+PASTA="/caminho/da/pasta"
+
+# 1. Verifica se a pasta existe
+if [ ! -d "$PASTA" ]; then
+    echo "Pasta não encontrada. Executando comando..."
+    # Seu comando aqui (exemplo: criar a pasta)
+    mkdir -p "$PASTA"
+fi
+
+# 2. Select para escolher comandos
+PS3="Escolha uma opção: "
+options=("Listar arquivos" "Mostrar caminho" "Sair")
+
+select opt in "${options[@]}"
+do
+    case $opt in
+        "Listar arquivos")
+            ls "$PASTA"
+            ;;
+        "Mostrar caminho")
+            echo "O caminho da pasta é: $PASTA"
+            ;;
+        "Sair")
+            echo "Saindo..."
+            break
+            ;;
+        *)
+            echo "Opção inválida."
+            ;;
+    esac
+done
