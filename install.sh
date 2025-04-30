@@ -1,3 +1,5 @@
+termux-change-repo
+termux-setup-storage
 apt update
 apt upgrade -y
 pkg install git -y
