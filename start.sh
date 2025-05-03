@@ -8,4 +8,3 @@ if [ -n "$var" ]; then
 else
     bash InstallMiner.sh
 fi
-
