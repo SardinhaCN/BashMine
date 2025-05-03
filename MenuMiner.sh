@@ -8,8 +8,14 @@ if [ ! -d "$COMANDOS_DIR" ]; then
     exit 1
 fi
 
+# Banner com figlet
+clear
+echo "====================================="
+figlet "BASH - MINER"
+echo "====================================="
+
 # Menu interativo
-echo "===== MENU DE COMANDOS ====="
+echo "===== MENU DE Cryptos ====="
 comandos=()
 i=1
 
