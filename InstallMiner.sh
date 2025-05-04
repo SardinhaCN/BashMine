@@ -1,3 +1,4 @@
+clear
 pkg install wget -y
 pkg install proot -y
 pkg install cmake -y
