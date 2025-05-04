@@ -1,6 +1,3 @@
-apt update
-apt upgrade -y
-pkg install git -y
 pkg install wget -y
 pkg install proot -y
 pkg install cmake -y
